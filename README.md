@@ -1,22 +1,18 @@
+# Navigate on WebView Events (FlutterFlow App)
 
----
-
-### 📁 `README.md` for the Flutter App (`navigate_on_webview_events_app`)
-
-```md
-# Flutter WebView Listener App
-
-This FlutterFlow-based app embeds an external web application using a WebView and listens to events emitted by it via `postMessage` and `JavaScriptChannel`.
+This FlutterFlow-based mobile app demonstrates how to embed an external web application via WebView and respond to events triggered from that web app using JavaScript channels.
 
 ## Overview
 
-This project demonstrates how to:
+The app listens for specific events sent by a web page (like `app_success` or `consent_granted`) loaded inside a WebView. When an event is received, the app navigates to different screens based on the event type.
 
-- Load an external web app in a WebView.
-- Listen to custom events (`app_success`, `consent_granted`) using `JavaScriptChannel`.
-- Trigger navigation or custom logic in Flutter based on received events.
+## Use Case
 
-## Code Snippet
+This is useful for integrating web-based workflows (like consent forms, onboarding steps, etc.) into a native mobile app. Rather than rebuilding the web functionality, it can be embedded and controlled through simple event communication.
+
+## WebView Integration
+
+A custom widget is used to handle the WebView and listen for JavaScript messages:
 
 ```dart
 class WebviewWithEvents extends StatefulWidget {
